@@ -1,0 +1,27 @@
+{
+  "name": "food-ordering-website",
+  "version": "1.0.0",
+  "description": "",
+  "homepage": "https://github.com/preranareddy08/FoodDeliveryWebsite#readme",
+  "bugs": {
+    "url": "https://github.com/preranareddy08/FoodDeliveryWebsite/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/preranareddy08/FoodDeliveryWebsite.git"
+  },
+  "license": "ISC",
+  "author": "Prerana Reddy",
+  "type": "commonjs",
+ 
+  "scripts": {
+    "start":"parcel index.html",
+    "build":"parcel build index.html"
+  },
+  "devDependencies": {
+    "parcel": "^2.16.3"
+  },
+  "dependencies": {
+    "react-dom": "^19.2.4"
+  }
+}
