@@ -1,40 +1,4 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
-
-const Header = () => {
-    return(
-        <div className="header">
-            <div className="logo-container">
-              <img className="logo" src = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSf99BY0LkqMHNICONVbcb_Q6IJbqGFPSIkQg&s"/>  
-            </div>
-            <div className="nav-items">
-                <ul>
-                    <li>Home</li>
-                    <li>About Us</li>
-                    <li>Contact Us</li>
-                    <li>Cart</li>
-                </ul>
-            </div>
-        </div>
-    );
-};
-const RestaurentCard = ({resData}) => {
-    const {cloudinaryImageId,name,cuisines,avgRating} = resData;
-   
-    return(
-        <div className="res-card" style ={{backgroundColor:"#f0f0f0"}}>
-            <img 
-                className="res-logo"
-                alt="res-logo"
-                src={"https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/"+cloudinaryImageId}/>
-           <h3>{name}</h3>
-           <h4>{cuisines.join(",")}</h4>
-           <h4>{avgRating}</h4>
-           <h4>38 minutes</h4>
-        </div>
-    )
-}
-const resObj = [
+export const resObj = [
       {
         "card": {
           "card": {
@@ -922,33 +886,3 @@ const resObj = [
         }
       }
     ]
-      
-
-const Body = () => {
-    return(
-        <div className="body">
-            <div className="search">Search</div>
-            <div className="res-container">
-            {
-                resObj.map((restaurent) => (
-                    <RestaurentCard 
-                    key={restaurent.card.card.info.id}
-                      resData={restaurent.card.card.info}/>
-                ))
-            }
-            </div>
-        </div>
-    );
-};
-
-const AppLayout = () => {
-    return(
-        <div className="app">
-        <Header/>
-        <Body/>
-        </div>
-    )
-};
-
-const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(<AppLayout/>);
